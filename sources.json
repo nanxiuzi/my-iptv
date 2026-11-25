@@ -1,0 +1,17 @@
+{
+  "_comment": "上游公开直播源列表：按需增删。脚本会拉取这里的每个 m3u，合并去重后生成 live.m3u 与 international.m3u。带 \"intl\": true 的源只进 international.m3u。",
+  "check": true,
+  "_check_comment": "check=true 时对线路做短超时连通探测，可用线路排在前面；false 则不测速、直接保留全部线路。",
+  "sources": [
+    { "name": "peterhchina-cntv", "url": "https://peterhchina.github.io/iptv/CNTV-V4.m3u" },
+    { "name": "peterhchina-iptv", "url": "https://peterhchina.github.io/iptv/IPTV-V4.m3u" },
+    { "name": "vbsky", "url": "https://gh-proxy.com/raw.githubusercontent.com/vbskycn/iptv/refs/heads/master/tv/iptv4.m3u" },
+    { "name": "yonsm", "url": "https://yonsm.github.io/IPTV/iptv.m3u8" },
+    { "name": "zbefine", "url": "https://raw.githubusercontent.com/zbefine/iptv/main/iptv.m3u" },
+    { "name": "aptv", "url": "https://raw.githubusercontent.com/Kimentanm/aptv/master/m3u/iptv.m3u" },
+    { "name": "iptv-org-cn", "url": "https://iptv-org.github.io/iptv/countries/cn.m3u" },
+    { "name": "iptv-org-hk", "url": "https://iptv-org.github.io/iptv/countries/hk.m3u", "intl": true },
+    { "name": "iptv-org-tw", "url": "https://iptv-org.github.io/iptv/countries/tw.m3u", "intl": true },
+    { "name": "iptv-org-zho", "url": "https://iptv-org.github.io/iptv/languages/zho.m3u", "intl": true }
+  ]
+}
