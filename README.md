@@ -12,65 +12,53 @@
 | `scripts/aggregate.py` | 聚合、去重、测速并生成上面两份 m3u 的 Python 脚本（仅用标准库） |
 | `.github/workflows/update-iptv.yml` | GitHub Actions 定时工作流：自动跑脚本并把生成结果提交回仓库 |
 
-## 一、上传步骤
+## 一、订阅直链
 
-1. 在 GitHub 新建一个 **Public（公开）** 仓库（例如仓库名 `my-iptv`）。
-2. 把本目录里的 `live.m3u`、`international.m3u` 上传到仓库根目录。
-3. 确认仓库默认分支名（常见为 `main`，旧仓库可能是 `master`），下面链接里的分支名要与之对应。
-
-## 二、订阅直链（把占位符换成你的信息）
-
-> 占位符：`<用户名>` = 你的 GitHub 账号；`<仓库名>` = 上面新建的仓库；`<分支>` = `main` 或 `master`。
+> 仓库：`nanxiuzi/my-iptv`，分支：`main`。
 
 ### 国内主用源 `live.m3u`
 
 **原始 raw 链接：**
 ```
-https://raw.githubusercontent.com/<用户名>/<仓库名>/<分支>/live.m3u
+https://raw.githubusercontent.com/nanxiuzi/my-iptv/main/live.m3u
 ```
 
 **jsDelivr 镜像（国内通常更稳，推荐填这条）：**
 ```
-https://cdn.jsdelivr.net/gh/<用户名>/<仓库名>@<分支>/live.m3u
+https://cdn.jsdelivr.net/gh/nanxiuzi/my-iptv@main/live.m3u
 ```
 
 **gh-proxy 加速：**
 ```
-https://gh-proxy.com/https://raw.githubusercontent.com/<用户名>/<仓库名>/<分支>/live.m3u
+https://gh-proxy.com/https://raw.githubusercontent.com/nanxiuzi/my-iptv/main/live.m3u
 ```
 
 ### 国际补充源 `international.m3u`
 
 ```
-https://cdn.jsdelivr.net/gh/<用户名>/<仓库名>@<分支>/international.m3u
+https://cdn.jsdelivr.net/gh/nanxiuzi/my-iptv@main/international.m3u
 ```
 
-### 填好后的示例（用户名 `myname`，仓库 `my-iptv`，分支 `main`）
+把上面任意一条链接粘贴到播放器的「订阅地址 / 远程播放列表」即可。
 
-```
-https://cdn.jsdelivr.net/gh/myname/my-iptv@main/live.m3u
-```
-
-把这条链接粘贴到播放器的「订阅地址 / 远程播放列表」即可。
-
-## 三、自动更新（GitHub Actions 工作流）
+## 二、自动更新（GitHub Actions 工作流）
 
 仓库已内置定时工作流 `.github/workflows/update-iptv.yml`，无需自己维护 m3u：
 
 - **定时运行**：每天北京时间 08:00（UTC 00:00）自动拉取 `sources.json` 里的上游源，聚合去重、测速后重新生成 `live.m3u` 和 `international.m3u`，并自动提交回仓库。
 - **手动触发**：仓库页 → Actions → Update IPTV Sources → Run workflow，可随时手动跑一次。
-- **上游源管理**：编辑 `sources.json` 的 `sources` 数组即可增删上游 m3u 地址；`check` 设为 `true` 开启测速（可用线路排前面），`false` 则跳过测速、保留全部线路。
+- **上游源管理**：编辑 `sources.json` 的 `sources` 数组即可增删上游 m3u 地址；`check` 设为 `true` 开启测速（可用线路排前面），`false` 则跳过测速、保留全部线路。带 `"intl": true` 的源只进 `international.m3u`。
 - **脚本**：`scripts/aggregate.py` 仅用 Python 标准库，可在本地直接 `python scripts/aggregate.py` 试运行。
 
 > 说明：Actions 运行在海外服务器，测速结果只用于线路排序参考；个别国内专线在 Runner 上探测不到，不代表你本地网络不可播放。若某频道多条线路都不理想，可在 `sources.json` 里补充更多上游源。
 
-## 四、手动更新源
+## 三、手动更新源
 
 - 也可以直接在仓库里替换/编辑对应的 `.m3u` 文件并提交（Commit），订阅链接不变，播放器下次拉取即为最新内容。
 - jsDelivr 有几分钟缓存，更新后若没刷新，稍等片刻或换 raw / gh-proxy 链接测试。
-- 新增频道时保持标准 m3u 格式（见第六节）。
+- 新增频道时保持标准 m3u 格式（见第五节）。
 
-## 五、EPG 节目单（电视报）
+## 四、EPG 节目单（电视报）
 
 播放列表头部已引用公开 EPG：
 
@@ -80,7 +68,7 @@ http://epg.51zmt.top:8000/e.xml
 
 如播放器需要单独填写 EPG 地址，可填上面这条；备用：`https://live.fanmingming.com/e.xml.gz`。
 
-## 六、m3u 格式规范（新增频道时参照）
+## 五、m3u 格式规范（新增频道时参照）
 
 ```
 #EXTM3U x-tvg-url="http://epg.51zmt.top:8000/e.xml"
@@ -92,7 +80,7 @@ http://流地址.m3u8
 - 每个频道两行：`#EXTINF` 信息行 + 流地址行。
 - `group-title` 决定播放器里的分组；`tvg-logo` 为台标图。
 
-## 七、注意事项
+## 六、注意事项
 
 - 仓库必须 **Public**，私有仓库的 raw 链接无法匿名访问。
 - 单个 m3u 文件建议小于 20MB（jsDelivr 限制）。
