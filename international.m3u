@@ -141,6 +141,8 @@ http://hwapi.yntv.net/ew265l/848y54.m3u8
 https://pull.daaiplus.com/live-DAAIPLUS/live-DAAIPLUS_HD.m3u8
 #EXTINF:-1 tvg-id="DiscoveringChina.cn@SD" tvg-name="Discovering China (1080p)" tvg-logo="https://i.imgur.com/wr2bLaA.png" group-title="Culture;Documentary",Discovering China (1080p)
 https://fastlive.cctvplus.com/out/v1/8442c3bfd4c64a3984389328f6087879/index.m3u8
+#EXTINF:-1 tvg-id="DiscoveryChannelSoutheastAsia.sg@SD" tvg-name="Discovery Channel Southeast Asia (720p)" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/2019_Discovery_logo.svg/960px-2019_Discovery_logo.svg.png" group-title="Entertainment",Discovery Channel Southeast Asia (720p)
+http://antm.dynu.net:14285/rtp/232.84.1.47:8262
 #EXTINF:-1 tvg-id="DongguanComprehensiveNewsChannel.cn@SD" tvg-name="Dongguan Comprehensive News Channel" tvg-logo="https://www.tvchinese.net/uploads/tv/dgtv1.jpg" group-title="News",Dongguan Comprehensive News Channel
 http://stream.sun0769.com/dgrtv1/mp4tv1_1500.flv
 #EXTINF:-1 tvg-id="GodStandsKidsClubTV.pk@Chinese" tvg-name="God Stands Kids Club TV Chinese" tvg-logo="https://i.imgur.com/FxDBbpz.jpeg" group-title="Kids;Religious",God Stands Kids Club TV Chinese
@@ -215,10 +217,6 @@ https://voa-ingest.akamaized.net/hls/live/2033878/tvmc08/playlist.m3u8
 https://h5cul1yar48um3t.wcetv.com/hls/wcetv318.m3u8
 #EXTINF:-1 tvg-id="XizangTVChinese.cn@SD" tvg-name="Xizang TV Chinese" tvg-logo="https://i.imgur.com/V0v3ST5.png" group-title="Undefined",Xizang TV Chinese
 https://pili-live-hls-zdzz-tv.zzxwcm.cn/zdzz-tv/nqzh.m3u8
-#EXTINF:-1 tvg-id="YichangSanxiaGeneralChannel.cn@SD" tvg-name="Yichang Sanxia General Channel" tvg-logo="https://www.tvchinese.net/uploads/tv/ycsxggpd.jpg" group-title="General",Yichang Sanxia General Channel
-https://liveplay.ycrmt.cn/sxgd/zhpd.m3u8
-#EXTINF:-1 tvg-id="YichangSanxiaTravelLifeChannel.cn@SD" tvg-name="Yichang Sanxia Travel & Life Channel" tvg-logo="https://www.tvchinese.net/uploads/tv/ycsxlysh.jpg" group-title="Travel",Yichang Sanxia Travel & Life Channel
-https://liveplay.ycrmt.cn/sxgd/lysh.m3u8
 #EXTINF:-1 tvg-id="ZhejiangInternationalChannel.cn@SD" tvg-name="Zhejiang International Channel" tvg-logo="https://i.imgur.com/XOL1Hph.png" group-title="Undefined",Zhejiang International Channel
 https://ali-m-l.cztv.com/channels/lantian/channel10/1080p.m3u8
 #EXTINF:-1 tvg-id="AsianDrama.hk@SD" tvg-name="Asian Drama (1080p)" tvg-logo="https://i.imgur.com/wqtN7mH.png" group-title="Entertainment",Asian Drama (1080p)
@@ -465,6 +463,10 @@ https://klmysjtzb.rcsxzx.com/hls/klmy2.m3u8
 http://223.110.245.167/ott.js.chinamobile.com/PLTV/3/224/3221225947/index.m3u8
 #EXTINF:-1 tvg-id="YanbianSatelliteTV.cn@SD" tvg-name="Yanbian Satellite TV (576p)" tvg-logo="https://i.imgur.com/UKKsnhD.png" group-title="Undefined",Yanbian Satellite TV (576p)
 http://223.110.245.139/PLTV/4/224/3221227008/index.m3u8
+#EXTINF:-1 tvg-id="YichangSanxiaGeneralChannel.cn@SD" tvg-name="Yichang Sanxia General Channel" tvg-logo="https://www.tvchinese.net/uploads/tv/ycsxggpd.jpg" group-title="General",Yichang Sanxia General Channel
+https://liveplay.ycrmt.cn/sxgd/zhpd.m3u8
+#EXTINF:-1 tvg-id="YichangSanxiaTravelLifeChannel.cn@SD" tvg-name="Yichang Sanxia Travel & Life Channel" tvg-logo="https://www.tvchinese.net/uploads/tv/ycsxlysh.jpg" group-title="Travel",Yichang Sanxia Travel & Life Channel
+https://liveplay.ycrmt.cn/sxgd/lysh.m3u8
 #EXTINF:-1 tvg-id="YouManCartoonChannel.cn@SD" tvg-name="You Man Cartoon Channel (576p)" tvg-logo="https://i.imgur.com/GZInf2W.png" group-title="Animation;Kids",You Man Cartoon Channel (576p)
 http://183.207.249.15/PLTV/4/224/3221225933/index.m3u8
 #EXTINF:-1 tvg-id="YunnanSatelliteTV.cn@SD" tvg-name="Yunnan Satellite TV (1080p)" tvg-logo="https://www.tvchinese.net/uploads/tv/yunnantv.jpg" group-title="General",Yunnan Satellite TV (1080p)
